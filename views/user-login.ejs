@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'All Posts' }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+  <link rel="stylesheet" href="/styles/forms.css">
+</head>
+
+<header id="main-header">
+  <div id="logo">
+    <a href="/">MUSIC</a>
+  </div>
+  <nav>
+    
+  </nav>
+</header>
+
+<body>
+ 
+  <h1>회원가입</h1>
+  
+    <form action="/register" method="POST">
+      <div class="form-control">
+        <label for="name">이름</label>
+        <input type="text" id="title" name="name" required> 
+      </div>
+      <div class="form-control">
+        <label for="email">이메일</label>
+        <input type="text" id="summary" name="email" required maxlength="255">
+      </div>
+
+      <button class="btn">등록하기</button>
+    </form>
+    
+    <h1>이미 아이디가 있으신가요?</h1>
+    <form action="/log-in" method="POST">
+      <div class="form-control">
+        <label for="name">이름</label>
+        <input type="text" id="title" name="name" required> 
+      </div>
+      <div class="form-control">
+        <label for="email">이메일</label>
+        <input type="text" id="summary" name="email" required maxlength="255">
+      </div>
+
+      <button class="btn">로그인</button>
+    </form>

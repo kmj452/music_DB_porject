@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'Add new post' }) %>
+  <link rel="stylesheet" href="/styles/forms.css">
+</head>
+
+<body>
+  <%- include('includes/header') %>
+  <main>
+    
+    <h1>Search Music</h1>
+    <form action="/Create-view" method="POST">
+      <div  id="search-music">
+        <label for="singername">가수명</label>
+        <select id="song" name="singername">
+          <% for (const  singername of  singernames) { %>
+              <option value="<%=  singername.singer_name %>"><%=  singername.singer_name %></option>
+          <% } %>
+        </select>
+        <label for="songgenre">장르명</label>
+        <select id="song" name="songgenre">
+          <% for (const  songgenre of  songgenres) { %>
+              <option value="<%=  songgenre.song_gen %>"><%=  songgenre.song_gen %></option>
+          <% } %>
+        </select>
+        <label for="songfeel">분위기</label>
+        <select id="song" name="songfeel">
+          <% for (const  songfeel of  songfeels) { %>
+              <option value="<%=  songfeel.song_feel %>"><%=  songfeel.song_feel %></option>
+          <% } %>
+        </select>
+      </div>
+      <button class="btn">조회하기</button>
+    </form>
+    <!--
+      
+    -->
+   
+
+
+
+
+  </main>
+</body>
+
+</html>

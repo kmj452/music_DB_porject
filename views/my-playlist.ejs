@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('includes/head', { title: 'All Posts' }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+  <link rel="stylesheet" href="/styles/tables.css">
+</head>
+<body>
+  <%- include('includes/header') %>
+  <h1>MY PLAYLIST</h1>
+  <% if (!musics || musics.length ===0 ){ %>
+    <p>NO music found </p>
+  <% } else{ %>
+    <table id="music-table" class="type10">
+      <thead>
+        <th>노래명</th>
+        <th>가수명</th>
+        <th>삭제</th>
+      </thead>
+      <tbody>
+      <% for (const music of musics) { %>
+        <tr>
+          <td><%= music.song_name %></td>
+          <td class="even"><%= music.singer_name %></td>
+          <td>
+            <form action ='/my-playlist-delete' method = "POST">  
+              <button class="btn btn-alt" name="song_id" value="<%= music.song_id%>">Delete</button> 
+            </form>
+          </td>
+        </tr>
+       <% } %>
+      </tbody>
+    </table> 
+  <% } %>  
+</main> 
+</body>

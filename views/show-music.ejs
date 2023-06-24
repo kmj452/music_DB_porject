@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'All Posts' }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+  <link rel="stylesheet" href="/styles/tables.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+
+  <%- include('includes/header') %>
+  <h1>Welcome!</h1>
+  <% if (!musics || musics.length ===0 ){ %>
+    <p>NO music found </p>
+  <% } else{ %>
+    <table id="music-table" class="type10">
+      <thead>
+      <th>노래명</th>
+      <th>가수명</th>
+      <th>발매년도</th>
+      <th>장르</th>
+      <th>감성</th>
+      </thead>
+      <tbody>
+      <% for (const music of musics) { %>
+        <tr>
+          <th ><%= music.song_name %></th>
+          <td class="even"><%= music.singer_name %></td>
+          <td><%= music.song_year %></td>
+          <td class="even"><%= music.song_gen %></td>
+          <td><%= music.song_feel %></td>
+        </tr>
+       <% } %>
+      </tbody>
+    </table>
+    
+  <% } %>  
+</main> 
+</body>
+

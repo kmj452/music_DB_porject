@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'All Posts' }) %>
+  <link rel="stylesheet" href="/styles/posts.css">
+  <link rel="stylesheet" href="/styles/tables.css">
+  <link rel="stylesheet" href="/styles/add-new-playlist.css">
+  <link rel="stylesheet" href="/styles/forms.css">
+</head>
+
+<body>
+
+  <%- include('includes/header') %>
+  
+  <h1>Add to my-playlist</h1>
+  <div id="add-music">
+    <form action="/update-playlist" method="POST">
+      <div class="form-control">
+        <label for="title">노래명</label>
+        <input type="text" id="title" name="title" required> 
+      </div>
+      <div class="form-control">
+        <label for="name">가수명</label>
+        <input type="text" id="title" name="name" required> 
+      </div>
+      <button class="btn">추가하기</button>
+    </form>
+  </div>
+    <% if (!createdviews || createdviews.length ===0 ){ %>
+      <p id="music-found">NO music found </p>
+    <% } else{ %>
+      <table id="music-table"class="type10">
+        <thead>
+          <th>노래명</th>
+          <th>가수명</th>
+          <th>장르</th>
+          <th>발매년도</th>
+          <th>감성</th>
+        </thead>
+        <tbody>
+          <% for (const createdview of createdviews) { %>
+            <tr>
+              <td><%= createdview.song_name %></td>
+              <td class="even"><%= createdview.singer_name %></td>
+              <td><%= createdview.song_gen %></td>
+              <td class="even"><%= createdview.song_year %></td>
+              <td><%= createdview.song_feel %></td>
+            </tr>
+            <% } %>
+        </tbody>
+     
+      </table>
+  <% } %>  
+</main> 
+</body>

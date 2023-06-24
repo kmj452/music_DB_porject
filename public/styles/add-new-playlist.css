@@ -1,0 +1,12 @@
+#add-music{
+    text-align: left;
+}
+#add-music label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    /*display: none;*/
+}
+#add-music input{
+  
+}
